@@ -11,31 +11,200 @@
 
 body{
     font-family: 'CustomFont';
-
+    height: 100vh;
 }
 
 .container{
-    height: 100vh;  
+    position: relative;
+    background-color: #0c0a09;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.add-part{
+.book-part{
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-rows: repeat(2, 300px);
+}
+
+.add-card{
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-flex: 10%;
+    border: 1px solid #ffffff;
+    width: 200px;
+    transition: 0.3s;
 }
 
-.btn-add{
-    padding: 10px 20px;
-    background-color: #38bdf8;
-    border-radius: 20px;
-    text-decoration: none;
+.add-card:hover{
+    scale: 105%;
+}
+
+.book-card{
     color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    border: 1px solid #ffffff;
+    width: 200px; 
+}
+
+.book-card h1{
+    font-size: 1.2rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.state{
+    background-color: #b91c1c;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.state:hover{
+    background-color: #991b1b;
+    font-size: 1.1rem;
+}
+
+svg{
+ scale: 80%;
+ fill: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }
 
 
-.book-part{
-    flex: 90%;
+
+.pop-up{
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
 }
+
+.pop-up.clicked{
+    display: block;
+}
+
+.pop-up-pos{
+    background-color: #18181b;
+    padding: 50px 40px;
+    border: 2px solid black;
+    width: 300px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    
+}
+
+.x-btn{
+    cursor: pointer;
+    width: 20px;
+    fill: rgb(121, 121, 121);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.submit-btn{
+ 
+
+      align-items: center;
+      background-color: initial;
+      background-image: linear-gradient(#464d55, #25292e);
+      border-radius: 8px;
+      border-width: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      flex-direction: column;
+      font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      font-size: 18px;
+      height: 52px;
+      justify-content: center;
+      line-height: 1;
+      margin: 0;
+      outline: none;
+      overflow: hidden;
+      padding: 0 32px;
+      text-align: center;
+      text-decoration: none;
+      transform: translate3d(0, 0, 0);
+      transition: all 150ms;
+      vertical-align: baseline;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .submit-btn:hover {
+      box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+      opacity: .85;
+    }
+    
+    .submit-btn:active {
+      outline: 0;
+    }
+    
+    .submit-btn:focus {
+      box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+    }
+    
+
+    
+    
+
+    
+
+
+input[type="text"]{
+    
+    padding: 6px 12px;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(247, 248, 248);
+    height: 46px;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+}
+input[type="number"]{
+    
+    padding: 6px 12px;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(247, 248, 248);
+    height: 46px;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+}
+
+
+
+
+
+

@@ -9,12 +9,36 @@
 <body>
 
     <div class="container">
-        <div class="add-part">
-            <a href="#" class="btn-add">Add Book</a>
-        </div>
+        <form action="" class="pop-up" >
+            <div class="pop-up-pos">
+                <svg class="x-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>xamarin</title><path d="M22.75,11.07C22.91,11.35 23,11.67 23,12C23,12.33 22.91,12.65 22.75,12.93L18.08,21C17.72,21.62 17.06,22 16.35,22H7.65C6.94,22 6.28,21.62 5.92,21L1.25,12.93C1.09,12.65 1,12.33 1,12C1,11.67 1.09,11.35 1.25,11.07L5.92,3C6.28,2.38 6.94,2 7.65,2H16.35C17.06,2 17.72,2.38 18.08,3L22.75,11.07M12,12V11.9L9.42,7.1L9.25,7H7.66L7.5,7.1V7.3L10,12L7.5,16.7V16.9L7.66,17H9.25L9.42,16.9L12,12.1V12L12.03,12.1L14.58,16.9L14.75,17H16.34L16.5,16.9V16.7L14,12L16.5,7.3V7.1L16.34,7H14.75L14.58,7.1L12.03,11.9L12,12Z" /></svg>
+                <input type="text" id="name" name="name" class="book-name" placeholder="Book Name" required>
+                <input type="text" id="author" name="author" class="writer-name" placeholder="Author" required>
+                <input type="number" id="pages" name="pages" class="page-numbers" placeholder="Number of Pages" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
         <div class="book-part">
+            <!-- <div class="add-card">
+                <a href="#" class="add-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                    <p>Add a Book</p>
+                </a>
+            </div> -->
+            <div class="book-card">
+                    <h1>Crime And Pubishment</h1>
+                    <div class="info">
+                        <p>Author: Fyodor Dostoyevsky</p>
+                        <p>Number of Pages: 546</p>
+                    </div>
+                    <div class="state">NOT READ</div>
+            </div>
+        </div>
 
         </div>
+
+
+
 
     </div>
 
