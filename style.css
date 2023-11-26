@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(Roboto-Light.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'CustomFont';
+
+}
+
+.container{
+    height: 100vh;  
+    display: flex;
+    flex-direction: column;
+}
+
+.add-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+flex: 10%;
+}
+
+.btn-add{
+    padding: 10px 20px;
+    background-color: #38bdf8;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.book-part{
+    flex: 90%;
+}
