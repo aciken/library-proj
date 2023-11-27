@@ -103,28 +103,6 @@ submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
 });
 
-// document.addEventListener('click', (e) =>{
-//     console.log(allCards)
-//     console.log(e.target.classList.valu)
-//     if (e.target.classList.value === 'state') {
-//         e.target.classList.add('read');
-//         e.target.textContent = 'READ';
-//         console.log(e.target.classList.value);
-//     } else if (e.target.classList.value === 'state read') {
-//         e.target.classList.remove('read');
-//         e.target.textContent = 'NOT READ';
-//         console.log(e.target.classList.value);
-//     }
-// })
-
-
-
-  
-
-
-
-
-
 
 
 
