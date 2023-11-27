@@ -83,6 +83,15 @@ body{
     transition: 0.3s;
 }
 
+.state.read{
+    background-color: #15803d; 
+}
+
+.state.state.read:hover{
+    background-color: #166534;
+    font-size: 1.1rem;
+}
+
 .state:hover{
     background-color: #991b1b;
     font-size: 1.1rem;

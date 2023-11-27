@@ -52,68 +52,74 @@ createAddBtn();
 const addBtn = document.querySelector('.add-card');
 
 
-
+let allCards = [];
 const myLibrary = [];
 
 addBtn.addEventListener('click', () =>{
     popUp.classList.toggle('clicked');
-    if(cardWrapper.lastChild.classList.value !== 'add-card'){
-        bookCard = document.querySelectorAll('.book-card');
-        bookCard.forEach(element => {
-            element.classList.toggle('clicked');
-        });
-    }
+
 
 
 })
 
 close.addEventListener('click', () =>{
     popUp.classList.toggle('clicked');
-    if(cardWrapper.lastChild.classList.value !== 'add-card'){
-        bookCard = document.querySelectorAll('.book-card');
-        bookCard.forEach(element => {
-            element.classList.toggle('clicked');
-        });
-    }
+
 
 })
 
-submitBtn.addEventListener('click', (event) =>{
-    if(popUp.checkValidity()){
-        myLibrary.push(new Book(bookName.value, authorName.value, pageNumber.value))
-        console.log(myLibrary)
+submitBtn.addEventListener('click', (event) => {
+    if (popUp.checkValidity()) {
+        myLibrary.push(new Book(bookName.value, authorName.value, pageNumber.value));
+        console.log(myLibrary);
         console.log('valid');
-       popUp.classList.remove('clicked');
-       if(cardWrapper.lastChild.classList.value !== 'add-card'){
-        bookCard = document.querySelectorAll('.book-card');
-        bookCard.forEach(element => {
-            element.classList.remove('clicked');
+        popUp.classList.remove('clicked');
+        createBookCard(bookName.value, authorName.value, pageNumber.value);
+
+        // Get the newly created book card
+        const newCard = document.querySelector('.book-card:last-child');
+
+        // Add the event listener for the "read state" functionality
+        newCard.addEventListener('click', (e) => {
+            console.log(newCard);
+            console.log(e.target.classList.value);
+            if (e.target.classList.value === 'state') {
+                e.target.classList.add('read');
+                e.target.textContent = 'READ';
+                console.log(e.target.classList.value);
+            } else if (e.target.classList.value === 'state read') {
+                e.target.classList.remove('read');
+                e.target.textContent = 'NOT READ';
+                console.log(e.target.classList.value);
+            }
         });
-    }
 
-       createBookCard(bookName.value, authorName.value, pageNumber.value);
-
-       bookName.value = '';
-       authorName.value = '';
-       pageNumber.value = '';
-
-
+        bookName.value = '';
+        authorName.value = '';
+        pageNumber.value = '';
     } else {
-        console.log('invalid')
+        console.log('invalid');
     }
     event.preventDefault();
-})
+});
 
-if(cardWrapper.classList.lastChild !== 'add-card'){
-    const readState = document.querySelectorAll('.state');
-    readState.forEach(element =>{
-        console.log(element)
-        element.addEventListener('click', (e) =>{
-            console.log(e.target.classList)
-        })
-    })
-}
+// document.addEventListener('click', (e) =>{
+//     console.log(allCards)
+//     console.log(e.target.classList.valu)
+//     if (e.target.classList.value === 'state') {
+//         e.target.classList.add('read');
+//         e.target.textContent = 'READ';
+//         console.log(e.target.classList.value);
+//     } else if (e.target.classList.value === 'state read') {
+//         e.target.classList.remove('read');
+//         e.target.textContent = 'NOT READ';
+//         console.log(e.target.classList.value);
+//     }
+// })
 
+
+
+  
 
 
 
