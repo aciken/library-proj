@@ -54,10 +54,19 @@ body{
     align-items: center;
     border: 1px solid #ffffff;
     width: 200px; 
+    transition: 0.3s;
+}
+
+.book-card:hover{
+    scale: 105%;
 }
 
 .book-card h1{
     font-size: 1.2rem;
+}
+
+.book-card.clicked{
+    pointer-events: none;
 }
 
 .info{
