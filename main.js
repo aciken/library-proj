@@ -46,6 +46,11 @@ const createBookCard = (name, author, pages) =>{
     readState.classList.add('state');
     readState.textContent = "NOT READ";
     addWrapper.appendChild(readState);
+
+    const removeBook = document.createElement('h1');
+    removeBook.textContent = 'x';
+    removeBook.classList.add('remove-book');
+    addWrapper.appendChild(removeBook);
 }
 
 createAddBtn();
@@ -100,7 +105,13 @@ const readBtn = () =>{
     newCard.addEventListener('click', (e) => {
         console.log(newCard);
         console.log(e.target.classList.value);
-        if (e.target.classList.value === 'state') {
+        if(e.target.classList.value === 'remove-book'){
+            console.log('yes')
+            newCard.remove()
+            console.log(cardWrapper)
+            console.log(myLibrary[0])
+        }
+        else if (e.target.classList.value === 'state') {
             e.target.classList.add('read');
             e.target.textContent = 'READ';
             console.log(e.target.classList.value);
