@@ -4,7 +4,8 @@ const submitBtn = document.querySelector('.submit-btn');
 const bookName = document.querySelector('.book-name');
 const authorName = document.querySelector('.writer-name');
 const pageNumber = document.querySelector('.page-numbers');
-const cardWrapper = document.querySelector('.book-part')
+const cardWrapper = document.querySelector('.book-part');
+const blackBackground = document.querySelector('.black-background');
 
 const createAddBtn = () =>{
     const addWraper = document.createElement('div');
@@ -57,14 +58,14 @@ const myLibrary = [];
 
 addBtn.addEventListener('click', () =>{
     popUp.classList.toggle('clicked');
-
+    toggleCards()
 
 
 })
 
 close.addEventListener('click', () =>{
     popUp.classList.toggle('clicked');
-
+    toggleCards()
 
 })
 
@@ -75,24 +76,9 @@ submitBtn.addEventListener('click', (event) => {
         console.log('valid');
         popUp.classList.remove('clicked');
         createBookCard(bookName.value, authorName.value, pageNumber.value);
+        disableCards();
+        readBtn();
 
-        // Get the newly created book card
-        const newCard = document.querySelector('.book-card:last-child');
-
-        // Add the event listener for the "read state" functionality
-        newCard.addEventListener('click', (e) => {
-            console.log(newCard);
-            console.log(e.target.classList.value);
-            if (e.target.classList.value === 'state') {
-                e.target.classList.add('read');
-                e.target.textContent = 'READ';
-                console.log(e.target.classList.value);
-            } else if (e.target.classList.value === 'state read') {
-                e.target.classList.remove('read');
-                e.target.textContent = 'NOT READ';
-                console.log(e.target.classList.value);
-            }
-        });
 
         bookName.value = '';
         authorName.value = '';
@@ -102,6 +88,46 @@ submitBtn.addEventListener('click', (event) => {
     }
     event.preventDefault();
 });
+
+
+
+
+
+const readBtn = () =>{
+    
+    const newCard = document.querySelector('.book-card:last-child');
+
+    newCard.addEventListener('click', (e) => {
+        console.log(newCard);
+        console.log(e.target.classList.value);
+        if (e.target.classList.value === 'state') {
+            e.target.classList.add('read');
+            e.target.textContent = 'READ';
+            console.log(e.target.classList.value);
+        } else if (e.target.classList.value === 'state read') {
+            e.target.classList.remove('read');
+            e.target.textContent = 'NOT READ';
+            console.log(e.target.classList.value);
+        }
+    });
+}
+
+const toggleCards = () =>{
+    blackBackground.classList.toggle('clicked');
+    document.addEventListener('click', (e) =>{
+        if(e.target.classList.value === 'black-background clicked'){
+            popUp.classList.remove('clicked');
+            blackBackground.classList.remove('clicked');
+        }
+    })
+};
+
+const disableCards = () =>{
+    blackBackground.classList.remove('clicked');
+
+    
+}
+
 
 
 
