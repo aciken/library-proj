@@ -108,8 +108,7 @@ const readBtn = () =>{
         if(e.target.classList.value === 'remove-book'){
             console.log('yes')
             newCard.remove()
-            console.log(cardWrapper)
-            console.log(myLibrary[0])
+
         }
         else if (e.target.classList.value === 'state') {
             e.target.classList.add('read');
@@ -146,13 +145,16 @@ const disableCards = () =>{
 
 
 
-function Book(Name, writer, pages){
+
+class Book {
+    constructor(Name, writer, pages){
     this.Name = Name;
     this.writer = writer;
     this.pages = pages;
     this.read = false;
 }
 
+}
 
 
 
